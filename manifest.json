@@ -1,0 +1,30 @@
+{
+  "name": "Exgender",
+  "version": "1.0",
+  "description": "Fancy a unisex world?",
+  "author": "yuerua",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_title": "Exgender"
+  },
+  "content_security_policy": "script-src 'self' https://apis.google.com/; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "js": [
+        "content-script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "content-script.js"
+  ],
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
